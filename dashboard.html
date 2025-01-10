@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Task Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('image.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        header nav ul li button {
+            background-color: #FF5722;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        header nav ul li button:hover {
+            background-color: #E64A19;
+        }
+
+        .dashboard-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .task-section {
+            width: 60%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-display-section {
+            width: 35%;
+            text-align: center;
+            padding: 20px;
+            color: #333;
+        }
+
+        .btn {
+            cursor: pointer;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        .btn-danger {
+            background-color: #DC3545;
+            color: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Task Manager</div>
+        <nav>
+            <ul>
+                <li><button id="logoutBtn" class="btn btn-primary">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="dashboard-container">
+        <section class="task-section">
+            <h1>Your Productivity Stats</h1>
+            <div class="add-task">
+                <input type="text" id="taskInput" placeholder="Add a new task">
+                <select id="taskCategory">
+                    <option value="Work">Work</option>
+                    <option value="Personal">Personal</option>
+                </select>
+                <input type="date" id="taskDueDate">
+                <button onclick="addTask()" class="btn btn-primary">Add Task</button>
+            </div>
+
+            <table id="taskTable" class="task-table">
+                <thead>
+                    <tr>
+                        <th>Task Name</th>
+                        <th>Category</th>
+                        <th>Due Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamic rows will be added here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section class="image-display-section">
+            <h2>Your tasks await! Manage, prioritize, and track your progress with ease</h2>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Task Manager. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
