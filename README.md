@@ -28,12 +28,20 @@ Fonts: Google Fonts - Poppins
 File structure 
 task-manager-app/
 ├── index.html          # Login page
+
 ├── register.html       # Registration page
+
 ├── dashboard.html      # Dashboard with task management
+
 ├── styles.css          # Styles for the application
+
 ├── scripts.js          # JavaScript for interactivity
+
 ├── image.png           # Background image (replaceable)
+
 ├── README.md           # Project documentation
+
+
 Usage
 Registration:
 
